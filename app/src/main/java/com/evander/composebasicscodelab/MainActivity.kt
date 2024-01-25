@@ -3,10 +3,14 @@ package com.evander.composebasicscodelab
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
+import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -34,16 +38,41 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+//Row(modifier = modifier.padding(24.dp)) {
+//    Column(
+//        modifier = modifier.weight(1f)
+//    ) {
+//        Text(text = "Hello")
+//        Text(text = name)
+//    }
+//    ElevatedButton(onClick = { /*TODO*/ }) {
+//        Text("Show more")
+//    }
+//
+//}
+
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Surface(
         color = MaterialTheme.colorScheme.primary,
         modifier = modifier.padding(vertical = 4.dp, horizontal = 8.dp)
         ) {
-        Column(modifier = modifier.fillMaxWidth().padding(24.dp)){
-            Text(text = "Hello")
-            Text(text = name)
-        }
+            Column(
+                modifier = modifier
+                    .fillMaxWidth()
+                    .padding(24.dp)
+            ) {
+                Row(modifier = modifier) {
+                    Text(text = "Hello")
+                    Text(text = name, modifier=modifier.weight(1f))
+                    ElevatedButton(onClick = { /*TODO*/ }) {
+                        Text("Show more")
+                    }
+                }
+
+            }
+
+
 
     }
 }
