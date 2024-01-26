@@ -38,41 +38,24 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-//Row(modifier = modifier.padding(24.dp)) {
-//    Column(
-//        modifier = modifier.weight(1f)
-//    ) {
-//        Text(text = "Hello")
-//        Text(text = name)
-//    }
-//    ElevatedButton(onClick = { /*TODO*/ }) {
-//        Text("Show more")
-//    }
-//
-//}
-
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Surface(
         color = MaterialTheme.colorScheme.primary,
         modifier = modifier.padding(vertical = 4.dp, horizontal = 8.dp)
         ) {
+        Row(modifier = modifier.padding(24.dp)) {
             Column(
-                modifier = modifier
-                    .fillMaxWidth()
-                    .padding(24.dp)
+                modifier = modifier.weight(1f)
             ) {
-                Row(modifier = modifier) {
-                    Text(text = "Hello")
-                    Text(text = name, modifier=modifier.weight(1f))
-                    ElevatedButton(onClick = { /*TODO*/ }) {
-                        Text("Show more")
-                    }
-                }
-
+                Text(text = "Hello")
+                Text(text = name)
+            }
+            ElevatedButton(onClick = { /*TODO*/ }) {
+                Text("Show more")
             }
 
-
+        }
 
     }
 }
